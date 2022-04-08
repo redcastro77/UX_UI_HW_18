@@ -19,7 +19,7 @@ div.container h1 {
 }
 
 .logo {
-    width: 23%
+    /* width: 23%; */
     padding: 1%;
     text-align:center;
 }
@@ -51,6 +51,74 @@ div.container h1 {
     color: #d1d1d1;
 }
 
+.mySkills {
+    padding: 28px 0px 0px 30px;
+    padding-top: 10px;
+}
+
+.flexContainer {
+    display: flex;
+    padding: 20px 20px;
+    /* justify-content: center; */
+}
+
+.flexContainer div {
+    width: 33%;
+    padding: 10px;
+}
+
+.imgResearch {
+    width: 65%;
+    height: auto;
+}
+
+.myWork {
+    padding: 60px 30px;
+    padding-top: 10px;
+    background-color: #d1d1d1;
+}
+
+#workGrid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 400px 445px 400px;
+    grid-template-areas:
+    "imgWork1 projectOne"
+    "imgWork2 projectTwo"
+    "imgWork3 projectThree"
+    ;
+}
+
+#workGrid img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+  .imgWork1 {
+    grid-area: imgWork1;
+  }
+  .imgWork2 {
+    grid-area: imgWork2;
+  }
+  .imgWork3 {
+    grid-area: imgWork3;
+  }
+  .projectOne {
+    grid-area: projectOne;
+  }
+  .projectTwo {
+    grid-area: projectTwo;
+  }
+  .projectThree {
+    grid-area: projectThree;
+  }
+
+  .imgWork1, .imgWork2, .imgWork3, .projectOne, .projectTwo, .projectThree {
+    padding: 30px;
+  }
+ 
 nav {
     width: 73%;
     padding: 1%;
@@ -70,7 +138,7 @@ li {
     font-size: 20px;
 }
 
-button {
+.resumeButton {
     background-color: #739696;
     border: none;
     color: white;
@@ -81,10 +149,32 @@ button {
     font-size: 14px;
     border-radius: 4px;
     margin: 15px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.workButton {
+    background-color: #739696;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: 'PT Sans', sans-serif;
 }
 
 img {
     border-radius: 1%;
+}
+
+h1 {
+    margin-top: 28px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    color:#FE5F55;
+    /* padding-left: 30px; */
 }
 
 h2 {
@@ -108,3 +198,36 @@ footer {
     background-color: #336671;
 }
 
+@media only screen and (max-width: 1000px) {
+        .navigation {
+          display: none;
+        }
+        .logo {
+          margin-left: auto;
+        }
+      }
+
+@media only screen and (max-width: 600) {
+    .flexContainer {
+        display: block;
+        padding: 20px 20px;
+        /* justify-content: center; */
+    }
+    .flexContainer div {
+            width: 100%;
+            /* padding: 10px; */
+    }
+    #workGrid {
+        display: grid;
+        grid-template-rows: 400px 150px 445px 150px 400px 150px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "imgWork1" 
+        "projectOne"
+        "imgWork2" 
+        "projectTwo"
+        "imgWork3" 
+        "projectThree"
+        ;
+    }
+}
